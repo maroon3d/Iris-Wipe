@@ -75,13 +75,13 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _Intensity: 0
+    - _Intensity: 0.6
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _PosX: 0.000000042385526
     - _PosY: 0.000000047683717
     - _QueueOffset: 0
-    - _Radius: 2.2
+    - _Radius: 0.5
     - _ReceiveShadows: 1
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0

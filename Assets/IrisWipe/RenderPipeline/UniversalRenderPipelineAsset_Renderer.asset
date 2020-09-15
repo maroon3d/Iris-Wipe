@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbc34b9097e49c94b8fde3aa816301c0, type: 3}
   m_Name: PostFX
   m_EditorClassIdentifier: 
-  m_Active: 0
+  m_Active: 1
   settings:
     Event: 500
     blitMaterial: {fileID: 2100000, guid: 5d7f1c91263e14346856825d10bcd799, type: 2}

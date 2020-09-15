@@ -12,12 +12,12 @@ public class IrisWipeController : MonoBehaviour
     #region VARIABLES
     public static IrisWipeController Instance;
     
-    [Header("Renderer Feature")] public ForwardRendererData     frd;
-    public                              bool                    postFX;
-
+    [Header("Renderer Feature")] public ForwardRendererData     forwardRendererData;
     [Header("Iris Parameters")] public  Material                mat;
 
     // STORED VARIABLES
+    private static string rendererFeatureName = "PostFX";
+    
     private Vector2 storedPosition;
     private float storedRadius;
     private float storedIntensity;
@@ -28,29 +28,6 @@ public class IrisWipeController : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (frd == null || mat == null) return;
-
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            WipeIn(0.75f, 0.6f, 0.5f, target);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            MoveFromAtoB(0.75f, target, 0.35f);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            MoveFromAtoB(0.75f, target, .85f);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            WipeOut(0.75f);
-        }
     }
 
     private Vector2 WorldPositionToShader(GameObject _target)
@@ -73,7 +50,7 @@ public class IrisWipeController : MonoBehaviour
 
     public IEnumerator WipeIn_Coroutine(float _duration, float _intensity, float _radius, GameObject _target)
     {
-        frd.rendererFeatures[0].SetActive(true);
+        GetRendererFeatureByName(rendererFeatureName).SetActive(true);
         
         float timer = 0;
         while (timer < 1f)
@@ -131,7 +108,7 @@ public class IrisWipeController : MonoBehaviour
             yield return new WaitForFixedUpdate();
         }
         
-        frd.rendererFeatures[0].SetActive(false);
+        GetRendererFeatureByName(rendererFeatureName).SetActive(false);
     }
 
     #endregion
@@ -169,6 +146,31 @@ public class IrisWipeController : MonoBehaviour
             mat.SetFloat("_PosX", storedPosition.x);
             mat.SetFloat("_PosY", storedPosition.y);
         }
+    }
+    #endregion
+
+    #region ENABLING and DISABLING renderer feature
+    public void OnDisable()
+    {
+        GetRendererFeatureByName(rendererFeatureName).SetActive(false);
+    }
+    
+    public void OnEnable()
+    {
+        GetRendererFeatureByName(rendererFeatureName).SetActive(false);
+    }
+
+    private ScriptableRendererFeature GetRendererFeatureByName(string _name)
+    {
+        foreach (var scriptableRendererFeature in forwardRendererData.rendererFeatures)
+        {
+            if (scriptableRendererFeature.name == _name)
+            {
+                return scriptableRendererFeature;
+            }
+        }
+
+        return null;
     }
     #endregion
 }
