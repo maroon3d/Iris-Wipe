@@ -14,6 +14,6 @@
 
 <br/>![ForwardRendererDataAsset](_GitReadme/ForwardRendererDataAsset.jpg)
 
-<br/> Invoke this 3 methods for controlling iris effect. **Transition-In, Move FromAtoB, Transition-Out**.
+<br/> Invoke this 3 methods to control iris effect. **Transition-In, Move FromAtoB, Transition-Out**.
 
 <br/>![Funcitons](_GitReadme/Funcitons.jpg)
