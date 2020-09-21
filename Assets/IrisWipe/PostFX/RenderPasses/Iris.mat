@@ -21,7 +21,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Iris
-  m_Shader: {fileID: -6465566751694194690, guid: 5ce7d94f0947a0847b4a25e687d0f284, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 5ce7d94f0947a0847b4a25e687d0f284,
+    type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -75,13 +76,13 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _Intensity: 0.6
+    - _Intensity: 0
     - _Metallic: 0
     - _OcclusionStrength: 1
-    - _PosX: 0.000000042385526
-    - _PosY: 0.000000047683717
+    - _PosX: -0.16499998
+    - _PosY: 0.26296878
     - _QueueOffset: 0
-    - _Radius: 0.5
+    - _Radius: 2.2
     - _ReceiveShadows: 1
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
@@ -96,4 +97,3 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Position: {r: -1, g: 0.5, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
-  m_BuildTextureStacks: []
