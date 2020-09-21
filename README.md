@@ -6,7 +6,7 @@
 
 <br/> ![Blit](_GitReadme/Blit.jpg)
 
-<br/> Assign a 2D or 3D gameObject to the "Target" variable of the controller script, and it will automatically pass position to the shader
+<br/> Assign a 2D or 3D gameObject to the "Target" variable of the controller script and it will automatically pass position to the shader
 
 <br/>![IrisControllerScript](_GitReadme/IrisControllerScript.jpg)
 
